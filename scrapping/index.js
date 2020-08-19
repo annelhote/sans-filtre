@@ -3,7 +3,7 @@ const cheerio = require('cheerio');
 const fs = require('fs')
 
 const url = 'https://sansfiltre.les150.fr/';
-const file = '../src/data/measures.json'
+const file = 'src/data/measures.json'
 
 axios(url)
   .then(async response => {
