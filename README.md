@@ -1,6 +1,6 @@
 # Extract data
 
-`node scrapping/index.js`
+`yarn data`
 
 # Run locally
 
