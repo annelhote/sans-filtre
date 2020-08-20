@@ -48,6 +48,9 @@
         <div>
           <font-awesome-icon icon="circle" color="orange"></font-awesome-icon> Consommer
         </div>
+        <div>
+          <font-awesome-icon icon="circle" color="#bbb"></font-awesome-icon> Inconnu
+        </div>
       </div>
     </div>
   </div>
