@@ -24,8 +24,8 @@ axios(url)
           break
         case 'ul':
           $(child).find('li').each(function (_, li) {
-            const measure = $(li).text()
-            thematics.push({ thematic, goal, measure })
+            const title = $(li).text()
+            thematics.push({ thematic, goal, title })
           })
       }
     })

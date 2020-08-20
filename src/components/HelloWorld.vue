@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
-    <div v-for="(chunk, index) in measureChunks" :key="index" class="mb-2">
-      <div v-for="(measure, index) in chunk" :key="index" :title="measure.title" class="measure mr-2 p-1 d-inline-block">
-        <font-awesome-icon :icon="retrieveIcon(measure.color)" color="white" />
+    <div v-for="(chunk, index) in proposalChunks" :key="index" class="mb-2">
+      <div v-for="(proposal, index) in chunk" :key="index" :title="proposal.title" class="proposal mr-2 p-1 d-inline-block">
+        <font-awesome-icon :icon="retrieveIcon(proposal.color)" color="white" />
       </div>
     </div>
     <div>
@@ -32,18 +32,18 @@
 <script>
 import _ from 'lodash'
 
-import measures from '../data/measures.json';
+import proposals from '../data/proposals.json';
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      measures
+      proposals
     }
   },
   computed: {
-    measureChunks () {
-      return _.chunk(Object.values(this.measures), 30)
+    proposalChunks () {
+      return _.chunk(Object.values(this.proposals), 30)
     }
   },
   methods: {
@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style scoped>
-.measure {
+.proposal {
   background-color: #bbb;
   width: 25px;
 }
