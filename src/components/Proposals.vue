@@ -34,23 +34,9 @@
         </div>
       </div>
       <div class="w-50 d-inline-block text-left pl-5">
-        <div>
-          <font-awesome-icon icon="circle" color="#ac973e"></font-awesome-icon> Se loger
-        </div>
-        <div>
-          <font-awesome-icon icon="circle" color="#8176cc"></font-awesome-icon> Se nourrir
-        </div>
-        <div>
-          <font-awesome-icon icon="circle" color="#5ba966"></font-awesome-icon> Produire et travailler
-        </div>
-        <div>
-          <font-awesome-icon icon="circle" color="#c75a93"></font-awesome-icon> Se déplacer
-        </div>
-        <div>
-          <font-awesome-icon icon="circle" color="#cc5f43"></font-awesome-icon> Consommer
-        </div>
-        <div>
-          <font-awesome-icon icon="circle" color="#bbb"></font-awesome-icon> Inconnu
+        <div v-for="thematic in thematics" :key="thematic.label">
+          <font-awesome-icon icon="circle" :color="thematic.color"></font-awesome-icon>
+          {{ thematic.label }}
         </div>
       </div>
     </div>
@@ -71,7 +57,7 @@
 </template>
 
 <script>
-import { chunk, find, indexOf, map, sortBy } from 'lodash'
+import { chunk, find, get, indexOf, map, sortBy } from 'lodash'
 
 import proposals from '../data/proposals.json'
 import thematics from '../data/thematics.json'
@@ -81,7 +67,26 @@ export default {
   data () {
     return {
       proposals,
-      order: 'status'
+      order: 'status',
+      thematics : [{
+        label: 'Se loger',
+        color: '#ac973e'
+      }, {
+        label: 'Se nourrir',
+        color: '#8176cc'
+      }, {
+        label: 'Produire et travailler',
+        color: '#5ba966'
+      }, {
+        label: 'Se déplacer',
+        color: '#c75a93'
+      }, {
+        label: 'Consommer',
+        color: '#cc5f43'
+      }, {
+        label: 'Inconnu',
+        color: '#bbb'
+      }]
     }
   },
   computed: {
@@ -130,27 +135,10 @@ export default {
       return icon
     },
     consolidateData (proposal) {
-      let color = null
-      let thematic = null
       const prop = find(thematics, { title: proposal.title })
-      if (prop) thematic = prop.thematic
-      switch (thematic) {
-        case 'Se loger':
-          color = '#ac973e'
-          break
-        case 'Se nourrir':
-          color = '#8176cc'
-          break
-        case 'Produire et travailler':
-          color = '#5ba966'
-          break
-        case 'Se déplacer':
-          color = '#c75a93'
-          break
-        case 'Consommer':
-          color = '#cc5f43'
-          break
-      }
+      const thematic = get(prop, 'thematic', null)
+      const prop2 = find(this.thematics, { label: thematic })
+      const color = get(prop2, 'color', null)
       return { color, thematic }
     }
   }
