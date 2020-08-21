@@ -58,13 +58,13 @@
 </template>
 
 <script>
-import { chunk, find } from 'lodash'
+import { chunk, find, indexOf, sortBy } from 'lodash'
 
 import proposals from '../data/proposals.json'
 import thematics from '../data/thematics.json'
 
 export default {
-  name: 'HelloWorld',
+  name: 'Proposals',
   data () {
     return {
       proposals
@@ -76,8 +76,9 @@ export default {
     }
   },
   mounted () {
-    console.log('mounted')
-    console.log(this.proposals)
+    // Pas encore étudiée, rejetée, en danger, débattue, partiellemnt acceptée, appliquée intégralement
+    const order = ['#f2992e', '#1e1e1e', '#e53434', '#ffd800', '#b7c145', '#70cc3f']
+    this.$set(this, 'proposals', sortBy(this.proposals, [o => -indexOf(order, o.color)]))
   },
   methods: {
     retrieveIcon (color) {
@@ -101,8 +102,6 @@ export default {
         case '#f2992e':
           icon = 'minus'
           break
-        default:
-          icon = 'check'
       }
       return icon
     },
