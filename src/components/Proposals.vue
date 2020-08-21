@@ -4,10 +4,11 @@
       <div
         v-for="(proposal, index) in chunk"
         :key="index"
-        :title="proposal.title"
         class="proposal mr-2 p-1 d-inline-block"
         :style="{ backgroundColor: retrieveColor(proposal) }">
-        <font-awesome-icon :icon="retrieveIcon(proposal.color)" color="white"></font-awesome-icon>
+        <a :href="proposal.link" target="_blank" :title="proposal.title">
+          <font-awesome-icon :icon="retrieveIcon(proposal.color)" color="white"></font-awesome-icon>
+        </a>
       </div>
     </div>
     <div>
