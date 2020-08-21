@@ -35,19 +35,19 @@
       </div>
       <div class="w-50 d-inline-block text-left pl-5">
         <div>
-          <font-awesome-icon icon="circle" color="red"></font-awesome-icon> Se loger
+          <font-awesome-icon icon="circle" color="#ac973e"></font-awesome-icon> Se loger
         </div>
         <div>
-          <font-awesome-icon icon="circle" color="green"></font-awesome-icon> Se nourrir
+          <font-awesome-icon icon="circle" color="#8176cc"></font-awesome-icon> Se nourrir
         </div>
         <div>
-          <font-awesome-icon icon="circle" color="yellow"></font-awesome-icon> Produire et travailler
+          <font-awesome-icon icon="circle" color="#5ba966"></font-awesome-icon> Produire et travailler
         </div>
         <div>
-          <font-awesome-icon icon="circle" color="blue"></font-awesome-icon> Se déplacer
+          <font-awesome-icon icon="circle" color="#c75a93"></font-awesome-icon> Se déplacer
         </div>
         <div>
-          <font-awesome-icon icon="circle" color="orange"></font-awesome-icon> Consommer
+          <font-awesome-icon icon="circle" color="#cc5f43"></font-awesome-icon> Consommer
         </div>
         <div>
           <font-awesome-icon icon="circle" color="#bbb"></font-awesome-icon> Inconnu
@@ -136,19 +136,19 @@ export default {
       if (prop) thematic = prop.thematic
       switch (thematic) {
         case 'Se loger':
-          color = 'red'
+          color = '#ac973e'
           break
         case 'Se nourrir':
-          color = 'green'
+          color = '#8176cc'
           break
         case 'Produire et travailler':
-          color = 'yellow'
+          color = '#5ba966'
           break
         case 'Se déplacer':
-          color = 'blue'
+          color = '#c75a93'
           break
         case 'Consommer':
-          color = 'orange'
+          color = '#cc5f43'
           break
       }
       return { color, thematic }
