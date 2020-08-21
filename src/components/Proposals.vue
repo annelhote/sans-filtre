@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import _ from 'lodash'
+import { chunk, find } from 'lodash'
 
 import proposals from '../data/proposals.json'
 import thematics from '../data/thematics.json'
@@ -72,8 +72,12 @@ export default {
   },
   computed: {
     proposalChunks () {
-      return _.chunk(Object.values(this.proposals), 30)
+      return chunk(Object.values(this.proposals), 30)
     }
+  },
+  mounted () {
+    console.log('mounted')
+    console.log(this.proposals)
   },
   methods: {
     retrieveIcon (color) {
@@ -105,7 +109,7 @@ export default {
     retrieveColor (proposal) {
       let color = null
       let thematic = null
-      const plop = _.find(thematics, { title: proposal.title })
+      const plop = find(thematics, { title: proposal.title })
       if (plop) thematic = plop.thematic
       switch (thematic) {
         case 'Se loger':
