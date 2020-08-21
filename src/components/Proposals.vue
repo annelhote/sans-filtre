@@ -5,7 +5,7 @@
         v-for="(proposal, index) in chunk"
         :key="index"
         class="proposal mr-2 p-1 d-inline-block"
-        :style="{ backgroundColor: retrieveColor(proposal) }">
+        :style="{ backgroundColor: proposal.thematicColor }">
         <a :href="proposal.link" target="_blank" :title="proposal.title">
           <font-awesome-icon :icon="retrieveIcon(proposal.color)" color="white"></font-awesome-icon>
         </a>
@@ -54,11 +54,24 @@
         </div>
       </div>
     </div>
+    <div>
+      <div>Trier par:</div>
+      <div>
+        <input type="radio" id="status" value="status" v-model="order">
+        <label for="status" class="mr-2">
+          Status
+        </label>
+        <input type="radio" id="thematic" value="thematic" v-model="order">
+        <label for="thematic">
+          Thématique
+        </label>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { chunk, find, indexOf, sortBy } from 'lodash'
+import { chunk, find, indexOf, map, sortBy } from 'lodash'
 
 import proposals from '../data/proposals.json'
 import thematics from '../data/thematics.json'
@@ -67,18 +80,29 @@ export default {
   name: 'Proposals',
   data () {
     return {
-      proposals
+      proposals,
+      order: 'status'
     }
   },
   computed: {
     proposalChunks () {
-      return chunk(Object.values(this.proposals), 30)
+      return chunk(Object.values(this.orderedProposals), 30)
+    },
+    orderedProposals () {
+      // Pas encore étudiée, rejetée, en danger, débattue, partiellemnt acceptée, appliquée intégralement
+      const order = ['#f2992e', '#1e1e1e', '#e53434', '#ffd800', '#b7c145', '#70cc3f']
+      if (this.order === 'status') {
+        return sortBy(this.proposals, [o => -indexOf(order, o.color)])
+      } else {
+        return sortBy(this.proposals, ['thematic'])
+      }
     }
   },
   mounted () {
-    // Pas encore étudiée, rejetée, en danger, débattue, partiellemnt acceptée, appliquée intégralement
-    const order = ['#f2992e', '#1e1e1e', '#e53434', '#ffd800', '#b7c145', '#70cc3f']
-    this.$set(this, 'proposals', sortBy(this.proposals, [o => -indexOf(order, o.color)]))
+    this.proposals = map(this.proposals, proposal => {
+      const { color, thematic } = this.consolidateData(proposal)
+      return { thematicColor: color, thematic, ...proposal }
+    })
   },
   methods: {
     retrieveIcon (color) {
@@ -105,11 +129,11 @@ export default {
       }
       return icon
     },
-    retrieveColor (proposal) {
+    consolidateData (proposal) {
       let color = null
       let thematic = null
-      const plop = find(thematics, { title: proposal.title })
-      if (plop) thematic = plop.thematic
+      const prop = find(thematics, { title: proposal.title })
+      if (prop) thematic = prop.thematic
       switch (thematic) {
         case 'Se loger':
           color = 'red'
@@ -127,7 +151,7 @@ export default {
           color = 'orange'
           break
       }
-      return color
+      return { color, thematic }
     }
   }
 }
