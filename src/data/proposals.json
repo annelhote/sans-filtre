@@ -94,8 +94,8 @@
     "title": "Modification du préambule de la Constitution",
     "color": "#1e1e1e",
     "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/modification-du-preambule-de-la-constitution/",
-    "thematic": "",
-    "goal": ""
+    "thematic": "Propositions de révision de la Constitution",
+    "goal": "Modification du préambule de la Constitution"
   },
   {
     "title": "Réduire la vitesse sur autoroute à 110 km/h maximum",
@@ -114,7 +114,9 @@
   {
     "title": "Systématiser les écolabels sur tous les équipements numériques",
     "color": "#f2992e",
-    "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/#elementor-tab-title-3601"
+    "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/#elementor-tab-title-3601",
+    "thematic": "Produire / Travailler",
+    "goal": "Changer la manière de produire, stocker, redistribuer l'énergie et encourager la sobriété énergétique"
   },
   {
     "title": "Développer puis mettre en place un score carbone sur tous les produits de consommation et les services",
@@ -995,15 +997,15 @@
     "title": "Modification de l’article 1er proposée par la Convention visant à renforcer la responsabilité de la France en matière environnementale",
     "color": "#f2992e",
     "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/modification-de-larticle-1er-de-la-constitution/",
-    "thematic": "",
-    "goal": ""
+    "thematic": "Propositions de révision de la Constitution",
+    "goal": "Modification de l'article 1er de la Constitution"
   },
   {
     "title": "Renforcer le contrôle des politiques environnementales",
     "color": "#f2992e",
     "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/renforcer-le-controle-des-politiques-environnementales-axe-de-reflexion/",
-    "thematic": "",
-    "goal": ""
+    "thematic": "Propositions de révision de la Constitution",
+    "goal": "Renforcer le contrôle des politiques environnementales"
   },
   {
     "title": "Favoriser des nouvelles modalités d’organisation du travail",
@@ -1015,12 +1017,16 @@
   {
     "title": "Promouvoir l’information et l’éducation sur les pratiques de sobriété numérique",
     "color": "#f2992e",
-    "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/#elementor-tab-title-3601"
+    "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/#elementor-tab-title-3601",
+    "thematic": "Produire / Travailler",
+    "goal": "Changer la manière de produire, stocker, redistribuer l'énergie et encourager la sobriété énergétique"
   },
   {
     "title": "Rendre accessibles au consommateur les engagements de neutralité carbone des acteurs du numérique",
     "color": "#f2992e",
-    "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/#elementor-tab-title-3601"
+    "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/accompagner-levolution-du-numerique-pour-reduire-ses-impacts-environnementaux/#elementor-tab-title-3601",
+    "thematic": "Produire / Travailler",
+    "goal": "Changer la manière de produire, stocker, redistribuer l'énergie et encourager la sobriété énergétique"
   },
   {
     "title": "Renégocier le CETA (Comprehensive Economic and Trade Agreement) au niveau européen pour y intégrer les objectifs climatiques de l’Accord de Paris",
@@ -1033,7 +1039,7 @@
     "title": "Réforme du Conseil Économique, Social et Environnemental",
     "color": "#eaeaea",
     "link": "https://propositions.conventioncitoyennepourleclimat.fr/objectif/reforme-du-conseil-economique-social-et-environnemental-axe-de-reflexion/",
-    "thematic": "",
-    "goal": ""
+    "thematic": "Propositions de révision de la Constitution",
+    "goal": "Réforme du Conseil Économique, Social et Environnemental"
   }
 ]

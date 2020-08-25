@@ -31,7 +31,7 @@ const main = async () => {
       _.each(responses, response => {
         const link = response.config.url
         const $2 = cheerio.load(response.data)
-        const section = $2('section.elementor-top-section.elementor-hidden-phone.elementor-section-boxed.elementor-section-height-default section .jet-listing-dynamic-field__content')
+        const section = $2('section.elementor-top-section.elementor-section-boxed.elementor-section-height-default section .jet-listing-dynamic-field__content')
         const thematic = $2(section[0]).text()
         const goal = $2(section[1]).text()
         const proposal = _.find(proposals, { link })

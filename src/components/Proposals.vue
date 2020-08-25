@@ -34,6 +34,9 @@
         <div>
           <font-awesome-icon icon="minus"></font-awesome-icon> Pas encore étudiée
         </div>
+        <div>
+          <font-awesome-icon icon="question"></font-awesome-icon> Manquante
+        </div>
       </div>
       <div class="w-50 d-inline-block text-left pl-5">
         <div class="font-weight-bold">
@@ -73,20 +76,23 @@ export default {
       proposals,
       order: 'status',
       thematics : [{
+        label: 'Propositions de révision de la Constitution',
+        color: '#56ae6c'
+      }, {
         label: 'Se loger',
-        color: '#ac973e'
+        color: '#9750a1'
       }, {
         label: 'Se nourrir',
-        color: '#8176cc'
+        color: '#ac9c3d'
       }, {
         label: 'Produire / Travailler',
-        color: '#5ba966'
+        color: '#6778d0'
       }, {
         label: 'Se déplacer',
-        color: '#c75a93'
+        color: '#ba543d'
       }, {
         label: 'Consommer',
-        color: '#cc5f43'
+        color: '#b94a73'
       }, {
         label: 'Inconnu',
         color: '#bbb'
@@ -122,7 +128,8 @@ export default {
         '#ffd800': 'comment',
         '#e53434': 'exclamation',
         '#1e1e1e': 'times',
-        '#f2992e': 'minus'
+        '#f2992e': 'minus',
+        '#eaeaea': 'question'
       }[color] || null
     }
   }
