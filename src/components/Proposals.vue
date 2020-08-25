@@ -109,39 +109,21 @@ export default {
   },
   mounted () {
     this.proposals = map(this.proposals, proposal => {
-      const { color } = this.consolidateData(proposal)
+      const thematic = find(this.thematics, { label: proposal.thematic })
+      const color = get(thematic, 'color', null)
       return { thematicColor: color, ...proposal }
     })
   },
   methods: {
     retrieveIcon (color) {
-      let icon = null
-      switch (color) {
-        case '#70cc3f':
-          icon = 'check'
-          break
-        case '#b7c145':
-          icon = 'check'
-          break
-        case '#ffd800':
-          icon = 'comment'
-          break
-        case '#e53434':
-          icon = 'exclamation'
-          break
-        case '#1e1e1e':
-          icon = 'times'
-          break
-        case '#f2992e':
-          icon = 'minus'
-          break
-      }
-      return icon
-    },
-    consolidateData (proposal) {
-      const prop2 = find(this.thematics, { label: proposal.thematic })
-      const color = get(prop2, 'color', null)
-      return { color }
+      return {
+        '#70cc3f': 'check',
+        '#b7c145': 'check',
+        '#ffd800': 'comment',
+        '#e53434': 'exclamation',
+        '#1e1e1e': 'times',
+        '#f2992e': 'minus'
+      }[color] || null
     }
   }
 }
