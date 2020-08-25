@@ -60,7 +60,6 @@
 import { chunk, find, get, indexOf, map, sortBy } from 'lodash'
 
 import proposals from '../data/proposals.json'
-import thematics from '../data/thematics.json'
 
 export default {
   name: 'Proposals',
@@ -75,7 +74,7 @@ export default {
         label: 'Se nourrir',
         color: '#8176cc'
       }, {
-        label: 'Produire et travailler',
+        label: 'Produire / Travailler',
         color: '#5ba966'
       }, {
         label: 'Se déplacer',
@@ -105,8 +104,8 @@ export default {
   },
   mounted () {
     this.proposals = map(this.proposals, proposal => {
-      const { color, thematic } = this.consolidateData(proposal)
-      return { thematicColor: color, thematic, ...proposal }
+      const { color } = this.consolidateData(proposal)
+      return { thematicColor: color, ...proposal }
     })
   },
   methods: {
@@ -135,11 +134,9 @@ export default {
       return icon
     },
     consolidateData (proposal) {
-      const prop = find(thematics, { title: proposal.title })
-      const thematic = get(prop, 'thematic', null)
-      const prop2 = find(this.thematics, { label: thematic })
+      const prop2 = find(this.thematics, { label: proposal.thematic })
       const color = get(prop2, 'color', null)
-      return { color, thematic }
+      return { color }
     }
   }
 }
