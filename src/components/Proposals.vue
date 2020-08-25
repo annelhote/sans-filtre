@@ -12,8 +12,10 @@
       </div>
     </div>
     <div>
-      <div>Légende :</div>
       <div class="w-50 d-inline-block text-right pr-5">
+        <div class="font-weight-bold">
+          Status
+        </div>
         <div>
           <font-awesome-icon icon="check"></font-awesome-icon> Appliquée intégralement
         </div>
@@ -34,6 +36,9 @@
         </div>
       </div>
       <div class="w-50 d-inline-block text-left pl-5">
+        <div class="font-weight-bold">
+          Thématique
+        </div>
         <div v-for="thematic in thematics" :key="thematic.label">
           <font-awesome-icon icon="circle" :color="thematic.color"></font-awesome-icon>
           {{ thematic.label }}
