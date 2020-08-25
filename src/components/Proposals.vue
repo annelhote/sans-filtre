@@ -4,7 +4,7 @@
       <div
         v-for="(proposal, index) in chunk"
         :key="index"
-        class="proposal mr-2 p-1 d-inline-block"
+        class="proposal mr-2 d-inline-block"
         :style="{ backgroundColor: proposal.thematicColor }">
         <a :href="proposal.link" target="_blank" :title="proposal.title">
           <font-awesome-icon :icon="retrieveIcon(proposal.color)" color="white"></font-awesome-icon>
@@ -150,6 +150,8 @@ export default {
 <style scoped>
 .proposal {
   background-color: #bbb;
+  border-radius: 2px;
+  padding: 1px 0;
   width: 25px;
 }
 </style>
